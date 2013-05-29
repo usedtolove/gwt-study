@@ -6,6 +6,6 @@ http://www.sencha.com/products/gxt/download/sencha-gxt/1708
 2.showcase
 http://www.sencha.com/examples/
 
-3.
+3.google:gxt how to use examples-src
 
 
