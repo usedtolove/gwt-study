@@ -1,0 +1,2 @@
+serviceClass: com.mycompany.gwt.sales.client.service.OrderServiceRPC
+path: E6C36AA2BB9140115E8D10EF82885AFB.gwt.rpc

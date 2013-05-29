@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='hello'>
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name='com.smartgwt.SmartGwt'/>
+    <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
+    <!--Step 1. Inheriting the GIN module-->
+    <inherits name="com.google.gwt.inject.Inject"/>
+    <!--编译该国际化中文语言-->
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    <extend-property name="locale" values="zh"/>
+
+    <entry-point class='com.train.client.HelloEntryPoint'/>
+    <source path='client'/>
+
+</module>

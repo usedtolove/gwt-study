@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='i18n'>
+    <!--继承 GWT 核心模块 -->
+    <inherits name='com.google.gwt.user.User'/>
+    <!--继承 Smartgwt 核心模块 -->
+    <inherits name='com.smartgwt.SmartGwt'/>
+    <!--继承 Smartgwt 主题样式 -->
+    <inherits name="com.smartclient.theme.enterprise.Enterprise"/>
+
+    <!--编译该国际化中文语言-->
+    <extend-property name="locale" values="zh"/>
+
+    <!--指定程序 EntryPoint 入口-->
+    <entry-point class='com.mycompany.sg.client.Hello'/>
+    <!--指定 GWT 代码在那个包下 -->
+    <source path='client'/>
+</module>

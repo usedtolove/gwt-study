@@ -1,0 +1,6 @@
+# Module sales
+# RPC service class, partial path of RPC policy file
+com.mycompany.gwt.sales.client.service.MenuNodeServiceRPC, 5087E71CDF314239FEADE639B1926C09.gwt.rpc
+com.mycompany.gwt.sales.client.service.RoleServiceRPC, A70EEB965112D26CE7C64877409B0BBF.gwt.rpc
+com.mycompany.gwt.sales.client.service.UserServiceRPC, 2769D13B78EEEEA7467BDCEBDCADE21B.gwt.rpc
+com.mycompany.gwt.sales.client.service.OrderServiceRPC, E6C36AA2BB9140115E8D10EF82885AFB.gwt.rpc

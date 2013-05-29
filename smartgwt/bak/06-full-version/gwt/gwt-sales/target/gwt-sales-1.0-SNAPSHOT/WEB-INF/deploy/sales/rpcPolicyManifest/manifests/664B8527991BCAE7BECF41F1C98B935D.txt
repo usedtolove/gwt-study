@@ -1,0 +1,2 @@
+serviceClass: com.mycompany.gwt.sales.client.service.MenuNodeServiceRPC
+path: 05FCEFF0DBBB9317B1D233CDA918ED0F.gwt.rpc

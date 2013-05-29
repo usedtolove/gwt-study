@@ -1,0 +1,2 @@
+serviceClass: com.mycompany.gwt.sales.client.service.UserServiceRPC
+path: 2769D13B78EEEEA7467BDCEBDCADE21B.gwt.rpc
