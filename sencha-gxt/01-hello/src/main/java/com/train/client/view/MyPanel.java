@@ -43,6 +43,7 @@ public class MyPanel extends FramedPanel {
                     public void onFailure(Throwable throwable) {
                         GWT.log(throwable.toString());
                     }
+
                     @Override
                     public void onSuccess(String s) {
                         Dialog simple = new Dialog();

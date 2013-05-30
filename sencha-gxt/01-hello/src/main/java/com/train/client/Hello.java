@@ -19,7 +19,7 @@ import com.train.client.service.HelloServiceAsync;
 @Singleton
 public class Hello implements EntryPoint {
 
-	public void onModuleLoad() {
+    public void onModuleLoad() {
         final MyInjector injector = GWT.create(MyInjector.class);
         RootPanel.get().add(injector.getMainPage());
     }

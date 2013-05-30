@@ -2,15 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.train</groupId>
-    <artifactId>gwt-gin-hello</artifactId>
+    <groupId>com.train.gwtp</groupId>
+    <artifactId>hello-gwtp</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
         <gwt.version>2.5.0</gwt.version>
-        <smartgwt.version>3.1</smartgwt.version>
         <gin.version>2.0.0</gin.version>
+        <gwtp.version>0.7</gwtp.version>
         <!--compiler and encoding-->
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
@@ -31,18 +31,18 @@
             <version>${gwt.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- smart gwt -->
-        <dependency>
-            <groupId>com.smartgwt</groupId>
-            <artifactId>smartgwt</artifactId>
-            <version>${smartgwt.version}</version>
-        </dependency>
         <!-- gin -->
         <dependency>
             <groupId>com.google.gwt.inject</groupId>
             <artifactId>gin</artifactId>
             <version>${gin.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <!--gwtp-all-->
+        <dependency>
+            <groupId>com.gwtplatform</groupId>
+            <artifactId>gwtp-all</artifactId>
+            <version>${gwtp.version}</version>
         </dependency>
         <!--else-->
         <dependency>
@@ -73,7 +73,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <runTarget>index.html</runTarget>
+                    <runTarget>helloGWTP.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
                     <!--国际化资源文件 baseName-->
@@ -114,7 +114,7 @@
                         <fileset>
                             <directory>${project.basedir}/src/main/webapp/</directory>
                             <includes>
-                                <directory>hello/**</directory>
+                                <directory>hellogwtp/**</directory>
                             </includes>
                         </fileset>
                         <fileset>

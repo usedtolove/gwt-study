@@ -17,6 +17,6 @@ public class GinBinding extends AbstractGinModule {
 //        bind(DynamicForm.class).annotatedWith(Names.named("helloFrom")).to(HelloDynamicForm.class);
 
         //case 3:Untargetted Bindings，用于直接注入该组件，紧耦合
-        bind(HelloDynamicForm.class);
+//        bind(HelloDynamicForm.class);
     }
 }
