@@ -52,11 +52,6 @@
             <artifactId>gxt</artifactId>
             <version>${gxt.version}</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.sencha.gxt</groupId>-->
-            <!--<artifactId>gxt-release</artifactId>-->
-            <!--<version>3.0.1</version>-->
-        <!--</dependency>-->
         <!-- gin -->
         <dependency>
             <groupId>com.google.gwt.inject</groupId>
