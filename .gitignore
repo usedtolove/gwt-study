@@ -41,7 +41,7 @@ war/WEB-INF/classes/
 #################
 ## Maven 
 #################
-*/target/**
+target/
 
 #################
 ## Eclipse
