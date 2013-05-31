@@ -1,6 +1,7 @@
-package com.train.shared;
+package com.train.shared.dispatch;
 
 import com.gwtplatform.dispatch.shared.UnsecuredActionImpl;
+import com.train.shared.to.User;
 
 /**
  * User: Hu Jing Ling <br/>
@@ -13,10 +14,7 @@ import com.gwtplatform.dispatch.shared.UnsecuredActionImpl;
 public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServerResult> {
 
     private String textToServer;
-
-    public SendTextToServerAction(String textToServer) {
-        this.textToServer = textToServer;
-    }
+    private User user;
 
     public SendTextToServerAction() {
     }
@@ -25,4 +23,15 @@ public class SendTextToServerAction extends UnsecuredActionImpl<SendTextToServer
         return textToServer;
     }
 
+    public void setTextToServer(String textToServer) {
+        this.textToServer = textToServer;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

@@ -1,4 +1,4 @@
-package com.train.shared;
+package com.train.shared.dispatch;
 
 import com.gwtplatform.dispatch.shared.Result;
 

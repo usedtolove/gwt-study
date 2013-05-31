@@ -3,8 +3,9 @@ package com.train.server;
 import com.gwtplatform.dispatch.server.ExecutionContext;
 import com.gwtplatform.dispatch.server.actionhandler.AbstractActionHandler;
 import com.gwtplatform.dispatch.shared.ActionException;
-import com.train.shared.SendTextToServerAction;
-import com.train.shared.SendTextToServerResult;
+import com.train.shared.dispatch.SendTextToServerAction;
+import com.train.shared.dispatch.SendTextToServerResult;
+import com.train.shared.to.User;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -30,12 +31,14 @@ public class SendTextToServerHandler extends AbstractActionHandler<SendTextToSer
     }
 
     @Override
-    public SendTextToServerResult execute(SendTextToServerAction sendTextToServerAction, ExecutionContext executionContext) throws ActionException {
-        String input = sendTextToServerAction.getTextToServer();
+    public SendTextToServerResult execute(SendTextToServerAction action, ExecutionContext executionContext) throws ActionException {
+        String input = action.getTextToServer();
         if (input == null || input.length() < 4) {
             input = "guest";
         }
         String serverInfo = servletContext.getServerInfo();
+        User user = action.getUser();
+        System.out.println(user);
         return new SendTextToServerResult("Hello, " + input + "! from " + serverInfo);
     }
 

@@ -14,8 +14,10 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 import com.train.client.place.NameTokens;
 import com.train.client.place.TokenParameters;
-import com.train.shared.SendTextToServerAction;
-import com.train.shared.SendTextToServerResult;
+import com.train.shared.dispatch.SendTextToServerAction;
+import com.train.shared.dispatch.SendTextToServerResult;
+import com.train.shared.to.Pet;
+import com.train.shared.to.User;
 
 /**
  * User: Hu Jing Ling
@@ -72,7 +74,16 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
     protected void onReset() {
         super.onReset();
 //        getView().setServerResponse(textToServer);
-        dispatcher.execute(new SendTextToServerAction(textToServer),new AsyncCallback<SendTextToServerResult>() {
+        SendTextToServerAction action = new SendTextToServerAction();
+        action.setTextToServer(textToServer);
+
+        User user = new User();
+        user.setName("jack");
+        user.setAge(25);
+        user.setPet(new Pet("tomcat"));
+        action.setUser(user);
+
+        dispatcher.execute(action,new AsyncCallback<SendTextToServerResult>() {
             @Override
             public void onFailure(Throwable caught) {
                 System.out.println("onFailure...");

@@ -21,7 +21,7 @@ import com.gwtplatform.dispatch.server.spring.HandlerModule;
 import com.gwtplatform.dispatch.server.spring.LoggerFactoryBean;
 import com.gwtplatform.dispatch.server.spring.actionvalidator.DefaultActionValidator;
 import com.gwtplatform.dispatch.server.spring.configuration.DefaultModule;
-import com.train.shared.SendTextToServerAction;
+import com.train.shared.dispatch.SendTextToServerAction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
