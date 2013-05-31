@@ -54,15 +54,14 @@ public class MainPagePresenter extends Presenter<MainPagePresenter.MyView,MainPa
     protected void onBind() {
         super.onBind();
         System.out.println("MainPagePresenter onBind()...");
-        getView().getSendButton().addClickHandler(new ClickHandler() {
+        registerHandler(getView().getSendButton().addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent clickEvent) {
                 String s = getView().getNameField().getValue();
-                PlaceRequest myRequest = new PlaceRequest("resp");
-                myRequest.with("name",s);
+                PlaceRequest myRequest = new PlaceRequest("resp").with("name",s);
                 placeManager.revealPlace( myRequest );
             }
-        });
+        }));
     }
 
     @Override

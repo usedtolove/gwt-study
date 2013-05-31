@@ -6,6 +6,7 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
+import com.gwtplatform.mvp.client.proxy.PlaceRequest;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 
@@ -16,7 +17,10 @@ import com.gwtplatform.mvp.client.proxy.RevealRootContentEvent;
 public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, ResponsePresenter.MyProxy> {
 
     public interface MyView extends View {
+        void setServerResponse(String serverResponse);
     }
+
+    private String textToServer;
 
     @ProxyCodeSplit
     @NameToken("resp")
@@ -46,9 +50,15 @@ public class ResponsePresenter extends Presenter<ResponsePresenter.MyView, Respo
     }
 
     @Override
+    public void prepareFromRequest(PlaceRequest request) {
+        super.prepareFromRequest(request);
+        textToServer = request.getParameter("name", null);
+    }
+
+    @Override
     protected void onReset() {
         super.onReset();
-        System.out.println("ResponsePresenter onReset()...");
+        getView().setServerResponse(textToServer);
     }
 
     @Override

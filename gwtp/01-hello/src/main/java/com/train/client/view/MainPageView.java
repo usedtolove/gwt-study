@@ -13,7 +13,7 @@ import com.train.client.presenter.MainPagePresenter;
 public class MainPageView extends ViewImpl implements MainPagePresenter.MyView {
 
     private static String html =
-            "<h1>Web Application Starter Project</h1>\n" +
+            "<h1>Main Page</h1>\n" +
                     "<table align=\"center\">\n" +
                     "  <tr>\n" +
                     "    <td colspan=\"2\" style=\"font-weight:bold;\">Please enter your name:</td>\n" +

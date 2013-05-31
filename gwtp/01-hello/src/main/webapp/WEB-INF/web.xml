@@ -5,16 +5,6 @@
 
 <web-app>
 
-  <!-- Servlets -->
-    <servlet>
-        <servlet-name>com.train.MyGwt HelloService</servlet-name>
-        <servlet-class>com.train.server.HelloServiceImpl</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>com.train.MyGwt HelloService</servlet-name>
-        <url-pattern>/hello/greet</url-pattern>
-    </servlet-mapping>
-
     <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
