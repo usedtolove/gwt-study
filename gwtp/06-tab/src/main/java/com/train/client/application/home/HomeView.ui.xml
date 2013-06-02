@@ -1,0 +1,7 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+        xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        xmlns:npui="urn:import:com.train.client.application.ui.tabs">
+    <g:HTMLPanel>
+        <npui:SimpleTabPanel ui:field="tabPanel"/>
+    </g:HTMLPanel>
+</ui:UiBinder>
