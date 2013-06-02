@@ -1,0 +1,10 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style src="../public.css"/>
+    <g:HTMLPanel styleName="{style.root}">
+        <h1>Response Page</h1>
+        <hr/>
+        <g:HTML ui:field="serverResponse"/>
+        <g:Button ui:field="closeButton">Close</g:Button>
+
+    </g:HTMLPanel>
+</ui:UiBinder>

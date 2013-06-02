@@ -1,0 +1,11 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui">
+    <ui:style  src="../public.css"/>
+    <g:HTMLPanel styleName="{style.root}">
+        <h1>GWTP+UiBinder+Spring Demo</h1>
+        <hr/>
+        <h3>Please enter your name:</h3>
+        <g:TextBox ui:field="nameField"/>
+        <g:Button ui:field="sendButton">Send</g:Button>
+
+    </g:HTMLPanel>
+</ui:UiBinder>
