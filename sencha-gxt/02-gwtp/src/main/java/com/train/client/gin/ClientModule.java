@@ -16,7 +16,6 @@ public class ClientModule extends AbstractPresenterModule {
     protected void configure() {
         install(new DefaultModule(DefaultPlaceManager.class));
         install(new DispatchAsyncModule());
-//        install(new ApplicationModule());
 
         // DefaultPlaceManager Places
         bindConstant().annotatedWith(DefaultPlace.class).to(NameTokens.homePage);

@@ -14,8 +14,13 @@ so that your app can take advantage of the latest GWT module capabilities.
     <inherits name="com.gwtplatform.dispatch.Dispatch"/>
     <inherits name='com.gwtplatform.mvp.MvpWithEntryPoint'/>
 
+    <!--编译该国际化中文语言-->
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    <extend-property name="locale" values="zh"/>
+
     <source path='client'/>
     <source path='shared'/>
+
 
     <set-configuration-property name='gin.ginjector.modules'
                                 value='com.train.client.gin.ClientModule' />

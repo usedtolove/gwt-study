@@ -88,10 +88,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!-- oracle -->
-        <dependency>
-            <groupId>ojdbc</groupId>
-            <artifactId>ojdbc</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>ojdbc</groupId>-->
+            <!--<artifactId>ojdbc</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>

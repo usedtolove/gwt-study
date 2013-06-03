@@ -104,14 +104,19 @@
                 <executions>
                     <execution>
                         <goals>
+                            <goal>i18n</goal>
                             <goal>compile</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
+                    <!---Xmx128M-->
                     <runTarget>index.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
                     <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
+                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                    <!--国际化资源文件 baseName-->
+                    <i18nMessagesBundle>com.train.client.SimpleMessages</i18nMessagesBundle>
                 </configuration>
             </plugin>
 

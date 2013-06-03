@@ -8,6 +8,7 @@ import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.Proxy;
+import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.train.client.place.NameTokens;
 
 /**
@@ -22,7 +23,7 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
 
     @ProxyCodeSplit
     @NameToken(NameTokens.homePage)
-    public interface MyProxy extends Proxy<ApplicationPresenter> {
+    public interface MyProxy extends ProxyPlace<ApplicationPresenter> {
     }
 
     @Inject

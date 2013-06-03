@@ -23,6 +23,9 @@ war/WEB-INF/classes/
 /02-i18n/src/main/webapp/i18n
 /03-spring/src/main/webapp/demo
 
+/smartgwt/bak/06-full-version/gwt/gwt-sales/src/main/webapp/WEB-INF/deploy/*
+/smartgwt/bak/06-full-version/gwt/gwt-sales/src/main/webapp/sales/*
+
 #################
 ## GWT common
 #################

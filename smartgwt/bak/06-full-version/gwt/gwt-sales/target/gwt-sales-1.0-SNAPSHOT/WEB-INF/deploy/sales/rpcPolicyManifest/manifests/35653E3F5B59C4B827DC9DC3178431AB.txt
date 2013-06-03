@@ -1,2 +1,0 @@
-serviceClass: com.mycompany.gwt.sales.client.service.RoleServiceRPC
-path: 01F8401EDFB18E8C861C7E054493E42F.gwt.rpc

@@ -1,11 +1,84 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:con="urn:import:com.sencha.gxt.widget.core.client.container"
+             xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
+             xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
+             xmlns:btn="urn:import:com.sencha.gxt.widget.core.client.button"
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
-    <g:HTMLPanel>
-        <h1>Index</h1>
-        <hr/>
-        <!--<btn:TextButton ui:field="testButton"/>-->
-    </g:HTMLPanel>
+    <ui:style>
+        .root {
+            background-color: yellow;
+            /*width: 100%;*/
+            /*height: 100%;*/
+        }
 
+        .test {
+            background-color: #c0c0c0;
+            width: 50%;
+            height: 50%;
+        }
+
+        .centerMargin {
+            margin: 10px;
+        }
+
+        .vlc {
+            color: red;
+        }
+
+        .header {
+            background: url('../../../../../webapp/images/header.png') no-repeat;
+        }
+    </ui:style>
+
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="northData">
+        <ui:attributes size="100"/>
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="westData">
+        <ui:attributes size="150" collapsible="true" split="true" />
+    </ui:with>
+    <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData" />
+    <!--<ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="eastData" />-->
+    <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="southData">
+        <ui:attributes size="20"/>
+    </ui:with>
+
+    <!--i18n-->
+    <ui:with field="i18n" type="com.train.client.SimpleMessages"/>
+
+    <con:Viewport ui:field="main" styleName="{style.root}">
+        <con:BorderLayoutContainer ui:field="con" borders="true">
+            <con:north layoutData="{northData}">
+                <con:VerticalLayoutContainer>
+                    <con:child>
+                        <g:Image url="/images/header.png" width="100%" height="70px"/>
+                    </con:child>
+                    <con:child>
+                        <toolbar:ToolBar>
+                            <btn:TextButton text="{i18n.student_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.clazz_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.course_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.case_mng}"/>
+                        </toolbar:ToolBar>
+                    </con:child>
+                </con:VerticalLayoutContainer>
+            </con:north>
+            <con:west layoutData="{westData}" >
+                <gxt:ContentPanel/>
+            </con:west>
+            <con:center layoutData="{centerData}">
+                <gxt:ContentPanel headingText="BorderLayout UiBinder Example" resize="false">
+                    <g:FlexTable ui:field="table" addStyleNames="{style.centerMargin}" cellSpacing="8" cellPadding="4" />
+                </gxt:ContentPanel>
+            </con:center>
+            <con:south layoutData="{southData}" >
+                <g:Label>buttom</g:Label>
+                <!--<gxt:ContentPanel height="10px"/>-->
+            </con:south>
+        </con:BorderLayoutContainer>
+    </con:Viewport>
 </ui:UiBinder>

@@ -416,12 +416,12 @@
                 <version>5.1.16</version>
             </dependency>
             <!-- oracle -->
-            <dependency>
-                <groupId>ojdbc</groupId>
-                <artifactId>ojdbc</artifactId>
-                <version>6</version>
-                <type>jar</type>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>ojdbc</groupId>-->
+                <!--<artifactId>ojdbc</artifactId>-->
+                <!--<version>6</version>-->
+                <!--<type>jar</type>-->
+            <!--</dependency>-->
             <!--log4j -->
             <dependency>
                 <groupId>log4j</groupId>
