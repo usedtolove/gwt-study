@@ -13,7 +13,7 @@
         </con:child>
         <con:child>
             <toolbar:ToolBar ui:field="myToolBar">
-                <btn:TextButton text="{i18n.student_mng}"/>
+                <btn:TextButton text="{i18n.student_mng}" ui:field="btn1"/>
                 <toolbar:SeparatorToolItem />
                 <btn:TextButton text="{i18n.clazz_mng}"/>
                 <toolbar:SeparatorToolItem />

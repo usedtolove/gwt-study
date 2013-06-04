@@ -29,3 +29,6 @@ custom css styles
 [INFO]    [ERROR] Errors in 'gen/com/train/client/application/common/com_gwtplatform_mvp_client_DesktopGinjector_DesktopGinjectorGinjector_fragment.java'
 [INFO]       [ERROR] Line 91: Rebind result 'com.train.client.application.common.HeaderView_BinderImpl' could not be found
 check *.ui.xml if there is any tag mismatched!
+
+
+https://github.com/ArcBees/GWTP/wiki/Boilerplate-Generation

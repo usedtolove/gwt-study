@@ -34,11 +34,9 @@ public class ApplicationPresenter extends Presenter<ApplicationPresenter.MyView,
     private final HeaderPresenter headerPresenter;
 
     @Inject
-//    public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
     public ApplicationPresenter(EventBus eventBus, MyView view, MyProxy proxy,
                                 HeaderPresenter header) {
         super(eventBus, view, proxy,RevealType.Root);
-//        getView().setUiHandlers(this);//将 View 关联 P
           this.headerPresenter = header;
     }
 

@@ -7,4 +7,7 @@ import com.gwtplatform.mvp.client.UiHandlers;
 * Date: 2013-06-04
 */
 public interface HeaderUiHandlers extends UiHandlers {
+
+    void selectModule(String moduleName);
+
 }
