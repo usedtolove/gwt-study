@@ -4,13 +4,22 @@
              xmlns:gxt="urn:import:com.sencha.gxt.widget.core.client"
              xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
              xmlns:btn="urn:import:com.sencha.gxt.widget.core.client.button"
+             xmlns:tree="urn:import:com.sencha.gxt.widget.core.client.tree"
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
     <ui:style>
         .root {
             background-color: yellow;
+            font-size: 11px;
             /*width: 100%;*/
             /*height: 100%;*/
+        }
+
+        .myFont{
+            font-family: "微软雅黑","宋体",Tahoma, Arial, Verdana, sans-serif;
+            font-size: 14px;
+            color: red;
+            font-weight: bolder;
         }
 
         .test {
@@ -30,13 +39,16 @@
         .header {
             background: url('../../../../../webapp/images/header.png') no-repeat;
         }
+        .center{
+            text-align: center;
+        }
     </ui:style>
 
     <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="northData">
         <ui:attributes size="100"/>
     </ui:with>
     <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="westData">
-        <ui:attributes size="150" collapsible="true" split="true" />
+        <ui:attributes size="150" collapsible="true" split="true"/>
     </ui:with>
     <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData" />
     <!--<ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="eastData" />-->
@@ -44,6 +56,9 @@
         <ui:attributes size="20"/>
     </ui:with>
 
+
+    <!--<ui:with type="com.sencha.gxt.core.client.ValueProvider" field="valueProvider" />-->
+    <!--<ui:with type="com.sencha.gxt.data.shared.TreeStore" field="store" />-->
     <!--i18n-->
     <ui:with field="i18n" type="com.train.client.SimpleMessages"/>
 
@@ -55,7 +70,7 @@
                         <g:Image url="/images/header.png" width="100%" height="70px"/>
                     </con:child>
                     <con:child>
-                        <toolbar:ToolBar>
+                        <toolbar:ToolBar ui:field="myToolBar">
                             <btn:TextButton text="{i18n.student_mng}"/>
                             <toolbar:SeparatorToolItem />
                             <btn:TextButton text="{i18n.clazz_mng}"/>
@@ -63,12 +78,28 @@
                             <btn:TextButton text="{i18n.course_mng}"/>
                             <toolbar:SeparatorToolItem />
                             <btn:TextButton text="{i18n.case_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.employee_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.exam_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.process_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.report_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.statistic_report}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.system_mng}"/>
+                            <toolbar:SeparatorToolItem />
+                            <btn:TextButton text="{i18n.log_mng}"/>
                         </toolbar:ToolBar>
                     </con:child>
                 </con:VerticalLayoutContainer>
             </con:north>
             <con:west layoutData="{westData}" >
-                <gxt:ContentPanel/>
+                <!--<con:FlowLayoutContainer ui:field="treeCon">-->
+                    <gxt:ContentPanel headingText="功能列表" ui:field="treePanel"/>
+                <!--</con:FlowLayoutContainer>-->
             </con:west>
             <con:center layoutData="{centerData}">
                 <gxt:ContentPanel headingText="BorderLayout UiBinder Example" resize="false">
@@ -76,7 +107,7 @@
                 </gxt:ContentPanel>
             </con:center>
             <con:south layoutData="{southData}" >
-                <g:Label>buttom</g:Label>
+                <g:Label styleName="{style.center}">版权所有:2010~2015苏州天智教育&nbsp;&nbsp;&nbsp;&nbsp;技术支持:苏州威思登科技服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;联系人:yejf@sz-tz.org</g:Label>
                 <!--<gxt:ContentPanel height="10px"/>-->
             </con:south>
         </con:BorderLayoutContainer>

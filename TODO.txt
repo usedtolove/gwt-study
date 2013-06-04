@@ -6,3 +6,7 @@ MyProxy extends ProxyPlace
 
 http://code.google.com/p/gwt-cx/
 http://gwt-cx.com/extgwt-serendipity/Serendipity.html#Imports
+
+i18n
+
+custom css styles
