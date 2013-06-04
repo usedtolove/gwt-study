@@ -25,6 +25,8 @@ war/WEB-INF/classes/
 
 /smartgwt/bak/06-full-version/gwt/gwt-sales/src/main/webapp/WEB-INF/deploy/*
 /smartgwt/bak/06-full-version/gwt/gwt-sales/src/main/webapp/sales/*
+/sencha-gxt/02-gwtp/src/main/webapp/gwtApp/*
+/sencha-gxt/02-gwtp/src/main/webapp/WEB-INF/deploy/*
 
 #################
 ## GWT common

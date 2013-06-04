@@ -1,8 +1,8 @@
 package com.train.client.application;
 
-import com.google.gwt.event.logical.shared.AttachEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
@@ -10,7 +10,7 @@ import com.sencha.gxt.core.client.ValueProvider;
 import com.sencha.gxt.data.shared.ModelKeyProvider;
 import com.sencha.gxt.data.shared.TreeStore;
 import com.sencha.gxt.widget.core.client.ContentPanel;
-import com.sencha.gxt.widget.core.client.container.FlowLayoutContainer;
+import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
 import com.sencha.gxt.widget.core.client.tree.Tree;
 import com.train.client.data.TestData;
 import com.train.client.images.ExampleImages;
@@ -25,6 +25,8 @@ import com.train.client.model.FolderDto;
 public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> implements ApplicationPresenter.MyView {
     @UiField
     ContentPanel treePanel;
+    @UiField
+    BorderLayoutContainer con;
 
     class KeyProvider implements ModelKeyProvider<BaseDto> {
         @Override
@@ -45,35 +47,35 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
     @Inject
     public ApplicationView(Binder binder) {
 
-        TreeStore<BaseDto> store = new TreeStore<BaseDto>(new KeyProvider());
+//        TreeStore<BaseDto> store = new TreeStore<BaseDto>(new KeyProvider());
 
-        FolderDto root = TestData.getMusicRootFolder();
-        for (BaseDto base : root.getChildren()) {
-            store.add(base);
-            if (base instanceof FolderDto) {
-                processFolder(store, (FolderDto) base);
-            }
-        }
+//        FolderDto root = TestData.getMusicRootFolder();
+//        for (BaseDto base : root.getChildren()) {
+//            store.add(base);
+//            if (base instanceof FolderDto) {
+//                processFolder(store, (FolderDto) base);
+//            }
+//        }
 
-        final Tree<BaseDto, String> tree = new Tree<BaseDto, String>(store, new ValueProvider<BaseDto, String>() {
-            @Override
-            public String getValue(BaseDto object) {
-                return object.getName();
-            }
-            @Override
-            public void setValue(BaseDto object, String value) {
-            }
-            @Override
-            public String getPath() {
-                return "name";
-            }
-        });
+//        final Tree<BaseDto, String> tree = new Tree<BaseDto, String>(store, new ValueProvider<BaseDto, String>() {
+//            @Override
+//            public String getValue(BaseDto object) {
+//                return object.getName();
+//            }
+//            @Override
+//            public void setValue(BaseDto object, String value) {
+//            }
+//            @Override
+//            public String getPath() {
+//                return "name";
+//            }
+//        });
 
         Widget w = binder.createAndBindUi(this);
 //        treeCon.add(tree);
-        treePanel.add(tree);
-        tree.setAutoExpand(true);//expand all nodes
-        tree.getStyle().setLeafIcon(ExampleImages.INSTANCE.music());
+//        treePanel.add(tree);
+//        tree.setAutoExpand(true);//expand all nodes
+//        tree.getStyle().setLeafIcon(ExampleImages.INSTANCE.music());
         initWidget(w);
 //        initWidget(binder.createAndBindUi(this));  //填充各 ui 组件
     }
@@ -84,6 +86,18 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
             if (child instanceof FolderDto) {
                 processFolder(store, (FolderDto) child);
             }
+        }
+    }
+
+    @Override
+    public void setInSlot(Object slot, IsWidget content) {
+        if (slot == ApplicationPresenter.HEADER_SLOT) {
+            con.setNorthWidget(content, new BorderLayoutContainer.BorderLayoutData(100));
+        }else if(slot == ApplicationPresenter.MENU_SLOT){
+
+        }
+        else {
+            super.setInSlot(slot, content);
         }
     }
 

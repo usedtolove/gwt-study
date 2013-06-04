@@ -10,3 +10,22 @@ http://gwt-cx.com/extgwt-serendipity/Serendipity.html#Imports
 i18n
 
 custom css styles
+
+<!-- Set up the Gray theme to override the default Blue -->
+  <!-- Without this line, or by putting it above GXT, app will be blue -->
+  <inherits name='com.sencha.gxt.theme.gray.Gray' />
+
+
+  [INFO]    [ERROR] Errors in 'gen/com/gwtplatform/mvp/client/DesktopGinjectorProvider.java'
+[INFO]       [ERROR] Line 8: Failed to resolve 'com.gwtplatform.mvp.client.DesktopGinjector' via deferred binding
+[INFO]    [WARN] For the following type(s), generated source was never committed (did you forget to call commit()?)
+[INFO]       [WARN] com.gwtplatform.mvp.client.com_gwtplatform_mvp_client_DesktopGinjectorImpl
+ÔÚmoduleÖÐbind
+
+
+[ERROR] Errors in 'E:\GitHub\gwt-study\sencha-gxt\02-gwtp\target\.generated\com\train\client\application\common\HeaderView_BinderImpl.java'
+[INFO]       [ERROR] Line 30: Type mismatch: cannot convert from DivElement to Widget
+[INFO]       See snapshot: C:\Users\ADMINI~1\AppData\Local\Temp\com.train.client.application.common.HeaderView_BinderImpl4626994803273862023.java
+[INFO]    [ERROR] Errors in 'gen/com/train/client/application/common/com_gwtplatform_mvp_client_DesktopGinjector_DesktopGinjectorGinjector_fragment.java'
+[INFO]       [ERROR] Line 91: Rebind result 'com.train.client.application.common.HeaderView_BinderImpl' could not be found
+check *.ui.xml if there is any tag mismatched!
