@@ -1,9 +1,18 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-             xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:con="urn:import:com.sencha.gxt.widget.core.client.container"
-             xmlns:toolbar="urn:import:com.sencha.gxt.widget.core.client.toolbar"
-             xmlns:btn="urn:import:com.sencha.gxt.widget.core.client.button">
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+        >
 
-    <g:Label>Here's the tree component</g:Label>
+    <ui:style>
+        .myTree{
+            background-color: yellow;
+        }
+        .myFont{
+            font-size: 12px;
+        }
+    </ui:style>
+    <con:SimpleContainer ui:field="treeCon" styleName="{style.myFont}">
+        <g:Label text="请选择模块"/>
+    </con:SimpleContainer>
 
 </ui:UiBinder>

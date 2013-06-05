@@ -10,15 +10,16 @@
         }
         .center{
             text-align: center;
+            /*color: red;*/
+            font-size: 12px;
         }
     </ui:style>
 
     <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="westData">
         <ui:attributes size="150" collapsible="true" split="true"/>
     </ui:with>
-    <ui:with type="com.sencha.gxt.widget.core.client.container.MarginData" field="centerData" />
     <ui:with type="com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData" field="southData">
-        <ui:attributes size="20"/>
+        <ui:attributes size="25"/>
     </ui:with>
 
     <!--i18n-->
@@ -27,13 +28,12 @@
     <con:Viewport ui:field="main">
         <con:BorderLayoutContainer ui:field="con" borders="true">
             <con:west layoutData="{westData}" >
-                    <gxt:ContentPanel headingText="功能列表" ui:field="treePanel"/>
+                    <gxt:ContentPanel headingText="功能列表" ui:field="treePanel" />
             </con:west>
-            <con:center layoutData="{centerData}">
-                <gxt:ContentPanel headingText="BorderLayout UiBinder Example" resize="false">
-                    <g:FlexTable ui:field="table" addStyleNames="{style.centerMargin}" cellSpacing="8" cellPadding="4" />
-                </gxt:ContentPanel>
-            </con:center>
+            <!--<con:center layoutData="{centerData}">-->
+                <!--<gxt:ContentPanel headingText="功能界面" resize="false">-->
+                <!--</gxt:ContentPanel>-->
+            <!--</con:center>-->
             <con:south layoutData="{southData}" >
                 <g:Label styleName="{style.center}">版权所有:2010~2015苏州天智教育&nbsp;&nbsp;&nbsp;&nbsp;技术支持:苏州威思登科技服务有限公司&nbsp;&nbsp;&nbsp;&nbsp;联系人:yejf@sz-tz.org</g:Label>
             </con:south>

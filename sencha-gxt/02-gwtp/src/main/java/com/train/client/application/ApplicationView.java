@@ -6,16 +6,10 @@ import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
-import com.sencha.gxt.core.client.ValueProvider;
-import com.sencha.gxt.data.shared.ModelKeyProvider;
-import com.sencha.gxt.data.shared.TreeStore;
+import com.sencha.gxt.core.client.util.Margins;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer;
-import com.sencha.gxt.widget.core.client.tree.Tree;
-import com.train.client.data.TestData;
-import com.train.client.images.ExampleImages;
-import com.train.client.model.BaseDto;
-import com.train.client.model.FolderDto;
+import com.sencha.gxt.widget.core.client.container.BorderLayoutContainer.BorderLayoutData;
 
 
 /**
@@ -24,16 +18,7 @@ import com.train.client.model.FolderDto;
  */
 public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> implements ApplicationPresenter.MyView {
     @UiField
-    ContentPanel treePanel;
-    @UiField
     BorderLayoutContainer con;
-
-    class KeyProvider implements ModelKeyProvider<BaseDto> {
-        @Override
-        public String getKey(BaseDto item) {
-            return (item instanceof FolderDto ? "f-" : "m-") + item.getId().toString();
-        }
-    }
 
 //    @UiField(provided = true)//the field must be filled before createAndBindUi is called.
 //    TreeStore store = new TreeStore<BaseDto>(new KeyProvider());;
@@ -46,55 +31,21 @@ public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> i
 
     @Inject
     public ApplicationView(Binder binder) {
-
-//        TreeStore<BaseDto> store = new TreeStore<BaseDto>(new KeyProvider());
-
-//        FolderDto root = TestData.getMusicRootFolder();
-//        for (BaseDto base : root.getChildren()) {
-//            store.add(base);
-//            if (base instanceof FolderDto) {
-//                processFolder(store, (FolderDto) base);
-//            }
-//        }
-
-//        final Tree<BaseDto, String> tree = new Tree<BaseDto, String>(store, new ValueProvider<BaseDto, String>() {
-//            @Override
-//            public String getValue(BaseDto object) {
-//                return object.getName();
-//            }
-//            @Override
-//            public void setValue(BaseDto object, String value) {
-//            }
-//            @Override
-//            public String getPath() {
-//                return "name";
-//            }
-//        });
-
-        Widget w = binder.createAndBindUi(this);
-//        treeCon.add(tree);
-//        treePanel.add(tree);
-//        tree.setAutoExpand(true);//expand all nodes
-//        tree.getStyle().setLeafIcon(ExampleImages.INSTANCE.music());
-        initWidget(w);
-//        initWidget(binder.createAndBindUi(this));  //填充各 ui 组件
-    }
-
-    private void processFolder(TreeStore<BaseDto> store, FolderDto folder) {
-        for (BaseDto child : folder.getChildren()) {
-            store.add(folder, child);
-            if (child instanceof FolderDto) {
-                processFolder(store, (FolderDto) child);
-            }
-        }
+//        Widget w = binder.createAndBindUi(this);
+//        initWidget(w);
+        initWidget(binder.createAndBindUi(this));  //填充各 ui 组件
     }
 
     @Override
     public void setInSlot(Object slot, IsWidget content) {
         if (slot == ApplicationPresenter.HEADER_SLOT) {
-            con.setNorthWidget(content, new BorderLayoutContainer.BorderLayoutData(100));
+            con.setNorthWidget(content, new BorderLayoutData(100));
         }else if(slot == ApplicationPresenter.MENU_SLOT){
-
+//            con.setWestWidget(content);
+            ContentPanel contentPanel = (ContentPanel) con.getWestWidget();
+            contentPanel.add(content);
+        }else if(slot == ApplicationPresenter.BODY_SLOT){
+            con.setCenterWidget(content);
         }
         else {
             super.setInSlot(slot, content);

@@ -1,6 +1,6 @@
 package com.train.client.application.common;
 
-import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.core.client.GWT;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
@@ -8,8 +8,7 @@ import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.Proxy;
-import com.sencha.gxt.widget.core.client.Dialog;
-import com.train.client.event.GlobalDataEvent;
+import com.train.client.event.ModuleSelectEvent;
 
 /**
 * User: Hu Jing Ling
@@ -36,7 +35,8 @@ public class HeaderPresenter extends Presenter<HeaderPresenter.MyView,HeaderPres
 
     @Override
     public void selectModule(String moduleName) {
-        System.out.println("select:" + moduleName);
-        GlobalDataEvent.fire(this, moduleName);
+        GWT.log("HeaderPresenter selectModule():" + moduleName);
+        ModuleSelectEvent.fire(this, moduleName);
     }
+
 }

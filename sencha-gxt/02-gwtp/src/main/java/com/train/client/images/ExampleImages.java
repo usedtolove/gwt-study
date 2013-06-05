@@ -15,6 +15,9 @@ public interface ExampleImages extends ClientBundle {
 
   public ExampleImages INSTANCE = GWT.create(ExampleImages.class);
 
+  @Source("application.png")
+  ImageResource application();
+
   @Source("add16.gif")
   ImageResource add16();
 
