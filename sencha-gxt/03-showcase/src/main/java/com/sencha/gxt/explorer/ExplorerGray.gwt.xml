@@ -1,0 +1,4 @@
+<module rename-to='explorerGray'>
+  <inherits name='com.sencha.gxt.explorer.Explorer'/>
+  <inherits name='com.sencha.gxt.theme.gray.Gray'/>
+</module>

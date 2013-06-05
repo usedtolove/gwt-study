@@ -18,7 +18,7 @@
 
     <con:SimpleContainer styleName="{style.testBack}">
         <!--<g:Label text="请选择功能"/>-->
-            <gxt:TabPanel   tabScroll="true" animScroll="true" closeContextMenu="true">
+            <gxt:TabPanel ui:field="tab" tabScroll="true" animScroll="true" closeContextMenu="true">
                 <!--<gxt:child config="{shortTextTabConfig}">-->
                     <!--<g:Label text="Hello" />-->
                 <!--</gxt:child>-->

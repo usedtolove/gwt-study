@@ -1,0 +1,1 @@
+copy from gxt-3.0.1-GPL.zip

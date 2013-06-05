@@ -111,7 +111,7 @@ public class MenuPresenter extends Presenter<MenuPresenter.MyView,MenuPresenter.
             @Override
             public void onSelection(SelectionEvent<BaseDto> event) {
                 String name = event.getSelectedItem().getName();
-                System.out.println("onSelection"+name);
+                eventBus.fireEvent (new FunctionSelectEvent(name));
             }
         });
 

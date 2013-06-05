@@ -36,7 +36,7 @@ public class HeaderPresenter extends Presenter<HeaderPresenter.MyView,HeaderPres
     @Override
     public void selectModule(String moduleName) {
         GWT.log("HeaderPresenter selectModule():" + moduleName);
-        ModuleSelectEvent.fire(this, moduleName);
+        eventBus.fireEvent (new ModuleSelectEvent(moduleName));
     }
 
 }
