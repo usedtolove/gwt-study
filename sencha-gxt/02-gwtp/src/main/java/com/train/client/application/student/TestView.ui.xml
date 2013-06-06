@@ -1,0 +1,9 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:con="urn:import:com.sencha.gxt.widget.core.client.container"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+    <con:SimpleContainer ui:field="treeCon">
+        <g:Label text="请选择模块"/>
+    </con:SimpleContainer>
+
+</ui:UiBinder>
