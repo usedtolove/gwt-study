@@ -32,3 +32,5 @@ check *.ui.xml if there is any tag mismatched!
 
 
 https://github.com/ArcBees/GWTP/wiki/Boilerplate-Generation
+
+https://github.com/lmignon/GWTP-GXT3-SAMPLES
