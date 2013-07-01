@@ -10,6 +10,8 @@ import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.train.client.application.ApplicationPresenter;
 import com.train.client.application.ApplicationView;
 import com.train.client.application.common.*;
+import com.train.client.application.student.TestPresenter;
+import com.train.client.application.student.TestView;
 import com.train.client.place.NameTokens;
 
 public class ClientModule extends AbstractPresenterModule {
@@ -32,5 +34,7 @@ public class ClientModule extends AbstractPresenterModule {
                 MenuPresenter.MyProxy.class);
         bindPresenter(BodyPresenter.class, BodyPresenter.MyView.class, BodyView.class,
                 BodyPresenter.MyProxy.class);
+        bindPresenter(TestPresenter.class, TestPresenter.MyView.class, TestView.class,
+                TestPresenter.MyProxy.class);
     }
 }

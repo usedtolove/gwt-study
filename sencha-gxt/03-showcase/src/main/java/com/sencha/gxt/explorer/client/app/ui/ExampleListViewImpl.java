@@ -41,6 +41,9 @@ import com.sencha.gxt.widget.core.client.selection.SelectionChangedEvent.Selecti
 import com.sencha.gxt.widget.core.client.toolbar.ToolBar;
 import com.sencha.gxt.widget.core.client.tree.Tree;
 
+/**
+ * 左侧 菜单树
+ */
 public class ExampleListViewImpl implements ExampleListView {
 
   @Inject
@@ -99,6 +102,7 @@ public class ExampleListViewImpl implements ExampleListView {
     
     tabPanel.add(list, "List");
 
+    //选择变动 事件监听
     SelectionChangedHandler<NamedModel> selectHandler = new SelectionChangedHandler<NamedModel>() {
       @Override
       public void onSelectionChanged(SelectionChangedEvent<NamedModel> event) {

@@ -2,8 +2,12 @@
              xmlns:con="urn:import:com.sencha.gxt.widget.core.client.container"
              xmlns:g="urn:import:com.google.gwt.user.client.ui">
 
-    <con:SimpleContainer ui:field="treeCon">
-        <g:Label text="请选择模块"/>
-    </con:SimpleContainer>
+    <con:VerticalLayoutContainer>
+        <g:Button ui:field="btn">Click me</g:Button>
+    </con:VerticalLayoutContainer>
+    <!--<con:SimpleContainer ui:field="testCon">-->
+        <!--<g:Label text="this is a test view!" ui:field="myLabel"/>-->
+        <!--<g:Button ui:field="btn">Click me</g:Button>-->
+    <!--</con:SimpleContainer>-->
 
 </ui:UiBinder>

@@ -3,9 +3,11 @@ package com.train.client.application.common;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
+import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.Proxy;
+import com.train.client.application.student.TestPresenter;
 import com.train.client.event.FunctionSelectEvent;
 
 /**
@@ -16,16 +18,20 @@ public class BodyPresenter extends Presenter<BodyPresenter.MyView,BodyPresenter.
     implements BodyUiHandlers,FunctionSelectEvent.FunctionDataHandler{
 
     public interface MyView extends View{
-        void addItem(String name);
+        void addItem(String name,PresenterWidget pw);
+//        void addItem(String name,Presenter pw);
     }
 
     @ProxyStandard
     public interface MyProxy extends Proxy<BodyPresenter> {
     }
 
+    private final TestPresenter test;
+
     @Inject
-    public BodyPresenter(EventBus eventBus, MyView view, MyProxy proxy) {
+    public BodyPresenter(EventBus eventBus, MyView view, MyProxy proxy,TestPresenter test) {
         super(eventBus, view, proxy);
+        this.test = test;
     }
     @Override
     protected void onBind() {
@@ -37,8 +43,7 @@ public class BodyPresenter extends Presenter<BodyPresenter.MyView,BodyPresenter.
     public void onFunctionEvent(FunctionSelectEvent event) {
 //        System.out.println("BodyPresenter onFunctionEvent():"+event.getData());
         String name = event.getData();
-        getView().addItem(name);
+        getView().addItem(name,test);
     }
-
 
 }

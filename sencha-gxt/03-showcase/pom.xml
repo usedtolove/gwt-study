@@ -175,7 +175,7 @@
                 <configuration>
                     <runTarget>Hello.html</runTarget>
                     <hostedWebapp>${webappDirectory}</hostedWebapp>
-                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                    <extraJvmArgs>-Xmx1024M -Xss2048k</extraJvmArgs>
                     <webappDirectory>${project.basedir}/src/main/webapp</webappDirectory>
                 </configuration>
             </plugin>

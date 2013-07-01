@@ -8,4 +8,6 @@ import com.gwtplatform.mvp.client.UiHandlers;
 */
 public interface TestUiHandlers extends UiHandlers {
 
+    void buttonClick();
+
 }

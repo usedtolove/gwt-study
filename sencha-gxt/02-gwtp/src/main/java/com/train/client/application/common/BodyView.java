@@ -5,6 +5,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
+import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.ViewWithUiHandlers;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.TabItemConfig;
@@ -31,18 +32,19 @@ public class BodyView extends ViewWithUiHandlers<BodyUiHandlers> implements Body
     }
 
     @Override
-    public void addItem(String name) {
+    public void addItem(String name,PresenterWidget pw) {
         int totalItem = tab.getWidgetCount();
 //        System.out.println("totalItem:"+ totalItem);
         if(totalItem == 0){
 //            Label item = new Label("Tab Body " +name);
-            ContentPanel contentPanel = new ContentPanel();
-            contentPanel.setHeight(100);
-            contentPanel.setWidth(100);
+//            ContentPanel contentPanel = new ContentPanel();
+//            contentPanel.setHeight(100);
+//            contentPanel.setWidth(100);
             TabItemConfig tif =  new TabItemConfig(name, true);
             tif.setIcon(ExampleImages.INSTANCE.application());
-            tab.add(contentPanel, tif);
-            tab.setActiveWidget(contentPanel);
+//            tab.add(contentPanel, tif);
+            tab.add(pw.getView(),tif);
+            tab.setActiveWidget(pw);
         }else{
             for (int i = 0; i < totalItem; i++) {
                 Widget w = tab.getWidget(i);
